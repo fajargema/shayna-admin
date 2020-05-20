@@ -12,7 +12,10 @@
   <title>Shayna Store</title>
 
   {{-- Style --}}
+  @stack('before-style')
   @include('includes.style')
+  @stack('after-style')
+
 
 </head>
 
@@ -80,7 +83,10 @@
   </div>
 
   {{-- Script --}}
+  @stack('before-script')
   @include('includes.script')
+  @stack('after-script')
+
 
 </body>
 
