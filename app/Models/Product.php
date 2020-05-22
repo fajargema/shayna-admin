@@ -14,4 +14,14 @@ class Product extends Model
     ];
 
     protected $hidden = [];
+
+    public function galleries()
+    {
+        return $this->hasMany(ProductGallery::class, 'products_id');
+    }
+
+    public function product_details()
+    {
+        // return $this->hasMany(TransactionDetail::class, 'products_id');
+    }
 }

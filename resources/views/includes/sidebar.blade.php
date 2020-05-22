@@ -28,15 +28,30 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBarang" aria-expanded="true" aria-controls="collapsePages">
         <i class="fas fa-fw fa-folder"></i>
         <span>Pages</span>
         </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapseBarang" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Main:</h6>
             <a class="collapse-item" href="{{ route('products.index') }}">Lihat Barang</a>
             <a class="collapse-item" href="{{ route('products.create') }}">Tambah Barang</a>
+        </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFoto" aria-expanded="true" aria-controls="collapsePages">
+        <i class="fas fa-fw fa-folder"></i>
+        <span>Pages</span>
+        </a>
+        <div id="collapseFoto" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Main:</h6>
+            <a class="collapse-item" href="{{ route('product-galleries.index') }}">Lihat Barang</a>
+            <a class="collapse-item" href="{{ route('product-galleries.create') }}">Tambah Barang</a>
         </div>
         </div>
     </li>
@@ -46,13 +61,6 @@
         <a class="nav-link" href="charts.html">
         <i class="fas fa-fw fa-chart-area"></i>
         <span>Charts</span></a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Tables</span></a>
     </li>
 
     <!-- Divider -->

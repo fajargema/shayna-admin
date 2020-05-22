@@ -6,7 +6,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Barang</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Data Foto Barang <small>{{ $product->name }}</small></h6>
         </div>
 
         <div class="card-body">
@@ -15,10 +15,9 @@
                     <thead class="thead-dark">
                     <tr>
                         <th>#</th>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
+                        <th>Nama Barang</th>
+                        <th>Foto</th>
+                        <th>Default</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -26,20 +25,13 @@
                         @forelse ($items as $item)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->name }}</td>
-                                <td>{{ $item->type }}</td>
-                                <td>{{ $item->price }}</td>
-                                <td>{{ $item->quantity }}</td>
+                                <td>{{ $item->product->name }}</td>
                                 <td>
-                                    <a href="{{ route('products.gallery', $item->id) }}" class="btn btn-info btn-circle btn-sm">
-                                        <i class="fas fa-images"></i>
-                                    </a>
-
-                                    <a href="{{ route('products.edit', $item->id) }}" class="btn btn-primary btn-circle btn-sm">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
-
-                                    <form action="{{ route('products.destroy', $item->id) }}" method="POST" class="d-inline">
+                                    <img src="{{ url($item->photo) }}" width="40px">
+                                </td>
+                                <td>{{ $item->is_default ? 'Ya' : 'Tidak' }}</td>
+                                <td>
+                                    <form action="{{ route('product-galleries.destroy', $item->id) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger btn-circle btn-sm">
